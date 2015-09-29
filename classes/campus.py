@@ -59,7 +59,7 @@ class Campus:
             campusName = row[4].value
             classroomName = row[5].value
             # Create campus, classroom and student
-            campus = Campus.create(campusName)
+            campus = cls.create(campusName)
             classroom = campus.addClassroom(classroomName)
             classroom.addStudent(cbID, fName, gName, gender)
 
