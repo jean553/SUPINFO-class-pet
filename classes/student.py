@@ -14,9 +14,9 @@ class Student:
         self.level = classroom
         self.gender = gender
 
-    def printStudent(self):
-        """ Print ID, family name and given name of a student """
-        print("\t", self.cbID, self.fName, self.gName, sep="\t")
+    def toString(self):
+        """Return a string  with ID, family name and given name of a student"""
+        return str(self.cbID) + "\t" + self.fName + "\t" + self.gName
 
     def downloadPicture(self, listPictures):
         """ Build the URL of student's picture and downloaded it if needed"""

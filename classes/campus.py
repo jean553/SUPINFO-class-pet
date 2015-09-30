@@ -53,6 +53,8 @@ class Campus:
         for row in source.active:
             # get all values
             cbID = row[0].value
+            if (type(cbID) != int):
+                continue  # skip the title line
             gender = 1 if row[1].value == "Mr" else 0
             fName = row[2].value
             gName = row[3].value

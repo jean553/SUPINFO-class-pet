@@ -70,6 +70,9 @@ target/
 # Thumbnails
 ._*
 
+# Excel temporary files
+~$*.xlsx
+
 # Files that might appear on external disk
 .Spotlight-V100
 .Trashes
@@ -102,4 +105,7 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+
 data/xlsx/2015 SUPINFO China Students.xlsx
+data/attendance/*
