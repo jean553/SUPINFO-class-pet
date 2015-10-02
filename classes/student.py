@@ -1,10 +1,10 @@
 import urllib.request
 from data.settings import PICTURES_PATH, URL_ROOT
 
-
 class Student:
-
-    """docstring for student"""
+    '''
+    Represents a student
+    '''
 
     def __init__(self, cbID, fName, gName, gender, classroom, campus):
         self.cbID = cbID
@@ -15,19 +15,24 @@ class Student:
         self.gender = gender
 
     def toString(self):
-        """Return a string  with ID, family name and given name of a student"""
-        return str(self.cbID) + "\t" + self.fName + "\t" + self.gName
+        '''
+        Return a string  with ID, family name and given name of a student
+        '''
+        return str(self.cbID) + '\t' + self.fName + '\t' + self.gName
 
     def downloadPicture(self, listPictures):
-        """ Build the URL of student's picture and downloaded it if needed"""
-        url = URL_ROOT + str(self.cbID) + ".jpg"
+        '''
+        Build the URL of student's picture and downloaded it if needed
+        '''
+        url = URL_ROOT + str(self.cbID) + '.jpg'
         fileName = PICTURES_PATH+url.split('/')[-1]
+
         if fileName.split('/')[-1] not in listPictures:
             try:
                 urllib.request.urlretrieve(url, fileName)
             except Exception as e:
-                print("problem with", url, "\t:\t", e)
+                print('problem with', url, '\t:\t', e)
             else:
-                print(fileName, "downloaded")
+                print(fileName, 'downloaded')
         else:
-            print("found", fileName)
+            print('found', fileName)
